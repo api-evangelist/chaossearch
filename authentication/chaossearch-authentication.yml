@@ -1,0 +1,20 @@
+generated: '2026-10-08'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.chaossearch.io/docs/chaossearch-rbac.md
+sources:
+- https://docs.chaossearch.io/docs/chaossearch-rbac.md
+- https://docs.chaossearch.io/docs/authentication.md
+- https://docs.chaossearch.io/reference/post_user-login.md
+- https://docs.chaossearch.io/reference/post_user-credential-apikey-create.md
+description: Authentication schemes for ChaosSearch APIs
+schemes:
+- type: jwt
+  name: JWT token
+  evidence: The token can be used as part of a specific `x-amz-security-token` header in REST requests when calling the ChaosSearch APIs.
+  location: header
+  header: x-amz-security-token
+  how_to_obtain: Obtain a JWT by calling the POST /user/login endpoint with Username, Password (and ParentUid for subaccounts) and then use the
+    returned Token value.
+note: Other authentication methods such as AWS SigV4 signing are described but not represented as a standard scheme type in this catalog.
+docs: https://docs.chaossearch.io/docs/chaossearch-rbac.md

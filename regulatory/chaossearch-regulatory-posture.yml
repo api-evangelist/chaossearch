@@ -1,0 +1,13 @@
+generated: '2026-10-08'
+method: searched
+source: https://www.chaossearch.io/security
+signals:
+  data_subject_request:
+    url: https://www.chaossearch.io/security
+    section: GDPR
+    note: Indicates commitment to honor data subject rights including the right to be forgotten.
+    evidence:
+      - source: https://www.chaossearch.io/security
+        http_status: 200
+        fetched: "true"
+        quote: "ChaosSearch is committed to complying with the EU General Data Protection Regulation (GDPR) as well as helping our customers ensure their compliance with these regulations such as the \"Right to be Forgotten.\""

@@ -1,23 +1,133 @@
 aid: chaossearch
+
 name: ChaosSearch
-description: 'ChaosSearch is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.chaossearch.io/hubfs/Homepage%20Header%20Graphic.png
+
+description: ChaosSearch provides a live analytics platform that transforms cloud storage into a searchable, SQL‑enabled and generative‑AI‑ready
+  analytical database. It enables customers to ingest streaming data at scale, perform real‑time search, visualizations, and advanced analytics
+  without managing infrastructure. The service supports integrations with AWS, Azure, and GCP, offering fast query performance and flexible data
+  retention for operational and business use cases.
+
 url: https://raw.githubusercontent.com/api-evangelist/chaossearch/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-08 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-08'
+
 modified: '2026-10-08'
+
 tags:
-- Company
-apis: []
+- Analytics
+- Observability
+- Security
+- Data Lake
+- Cloud Storage
+- ELK
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Plans
+  url: plans/chaossearch-plans-pricing.yml
+- type: Spectral
+  url: rules/chaossearch-rules.yml
+- type: JSONLD
+  url: json-ld/chaossearch-context.jsonld
+- type: Vocabulary
+  url: vocabulary/chaossearch-vocabulary.yml
+- type: DataModel
+  url: data-model/chaossearch-data-model.yml
+- type: Compliance
+  url: https://www.chaossearch.io/security
+- type: Authentication
+  url: authentication/chaossearch-authentication.yml
+- type: Conformance
+  url: conformance/chaossearch-conformance.yml
+- type: LLMsTxt
+  url: llms/chaossearch-llms.txt
+- type: Hosts
+  url: hosts/chaossearch-hosts.yml
+- type: Vendors
+  url: vendors/chaossearch-vendors.yml
+- type: TermsOfService
+  url: https://www.chaossearch.io/legal/terms-of-service
+- type: StatusPage
+  url: https://status.chaossearch.io/
+- type: Security
+  url: https://www.chaossearch.io/security
+- type: Pricing
+  url: https://www.chaossearch.io/pricing
+- type: Blog
+  url: https://www.chaossearch.io/blog
+- type: APIReference
+  url: https://docs.chaossearch.io/reference
+- type: GettingStarted
+  url: https://docs.chaossearch.io/docs/quick-start-guide
+- type: Documentation
+  url: https://docs.chaossearch.io/
+- type: TrustCenter
+  url: security/chaossearch-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/chaossearch-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/chaossearch-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.chaossearch.io/
+
+apis:
+- aid: chaossearch:chaossearch-api
+  name: ChaosSearch API
+  description: 'ChaosSearch API as documented publicly: 5 operations. Contract generated from the documentation by API Evangelist (2026-10-08);
+    not the provider''s own document.'
+  humanURL: https://docs.chaossearch.io/docs/authentication.md
+  baseURL: https://<chaossearch
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/chaossearch-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-user-login-request-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-get-user-groups-response-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-user-login-response-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-bulkexport-status-request-schema.json
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  method: derived
+  generated: '2026-10-08'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company serves an API surface but requires credentials before any description of it can be read
+  evidence:
+  - url: https://docs.chaossearch.io/mcp
+    status: 401
+  - url: https://www.chaossearch.io/mcp
+    status: 403
+  - url: https://www.chaossearch.io/
+    status: 200
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+x-enrichment:
+  date: '2026-10-08'
+  status: enriched
+  artifacts_added: 23
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

@@ -1,0 +1,228 @@
+# CHAOSSEARCH Knowledge Center Documentation
+
+> ChaosSearch delivers the true promise of data lakes, instantly turning a company's own cloud object storage into a hot, robust data analytics engine.
+
+## Documentation: Getting Started with ChaosSearch
+- [Welcome to the ChaosSearch Knowledge Center](https://docs.chaossearch.io/docs/chaossearch-documentation.md): Know Better®. Now you can, while realizing the potential of data lake analytics at scale, insightful product-led growth, and agile BI.
+- [Quick Start Guide](https://docs.chaossearch.io/docs/quick-start-guide.md): Review this introduction for an overview of the steps to get started and links to more information.
+  - [Step 1. Enable Access to Cloud Storage](https://docs.chaossearch.io/docs/step-1-enable-access.md): How to get started and connect ChaosSearch to your storage buckets and objects.
+  - [Step 2. Define Object Groups](https://docs.chaossearch.io/docs/step-2-define-object-groups.md): Create object groups to filter and select objects in your cloud storage buckets for indexing.
+  - [Step 3. Define Views](https://docs.chaossearch.io/docs/step-3-define-views.md): Use Refinery views to filter and access indexed data for search and visualization.
+  - [Step 4. Search and Visualize your Indexed Data](https://docs.chaossearch.io/docs/step-4-visualize-the-data.md): Use the embedded analytics interfaces to search and visualize the insights within your log and event data.
+    - [Getting Started with Search Analytics](https://docs.chaossearch.io/docs/getting-started-with-search-analytics.md): Run Discover searches, create visualizations and dashboards, and monitor for conditions in your indexed data.
+    - [Getting Started with SQL Analytics](https://docs.chaossearch.io/docs/getting-started-with-sql-analytics.md): Run SQL queries, create charts, and review dashboards to gain valuable insights within your indexed data.
+- [New Features and Updates in the UI](https://docs.chaossearch.io/docs/new-in-the-chaossearch-ui.md): A summary of the changes, improvements, and terminology updates in the ChaosSearch UI
+- [Settings](https://docs.chaossearch.io/docs/settings.md): Management settings for the ChaosSearch account owner
+- [Bursting](https://docs.chaossearch.io/docs/bursting.md): Temporarily scale compute resources to add more workers for larger or urgent workloads
+
+## Documentation: Prerequisites
+- [Configure Cloud Storage Access](https://docs.chaossearch.io/docs/solution-prerequisites.md): Provision access to your cloud-storage buckets to allow indexing of log and event files.
+  - [AWS Prerequisites](https://docs.chaossearch.io/docs/prerequisites.md): Review the prerequisites and steps for connecting ChaosSearch to your Amazon Web Services (AWS) S3 cloud storage.
+    - [CloudFormation Access Provisioning](https://docs.chaossearch.io/docs/cloudformation.md): Use CloudFormation as a programmatic way to provision access for ChaosSearch.
+    - [Terraform Access Provisioning for AWS](https://docs.chaossearch.io/docs/terraform-for-chaossearch.md): Use AWS Terraform as a way to provision access to your AWS storage buckets.
+    - [S3 Troubleshooting](https://docs.chaossearch.io/docs/s3-troubleshooting.md): A summary of different approaches for troubleshooting S3 access
+  - [GCP Cloud Storage Access](https://docs.chaossearch.io/docs/gcp-prerequisites.md): Review the prerequisites and steps for connecting ChaosSearch to your Google Cloud Platform (GCP) Cloud Storage buckets.
+- [Object Storage Log Organization Best Practices](https://docs.chaossearch.io/docs/cloud-storage-file-best-practices.md): Best practices for organizing log files and storage buckets for indexing
+  - [Organization Reference Example 1](https://docs.chaossearch.io/docs/organization-reference-example-1.md): A sample case study for log file and object group planning
+  - [Organization Reference Example 2](https://docs.chaossearch.io/docs/organization-reference-example-2.md): A sample case study for log file and object group planning
+- [Pushing Logs to Google Cloud Storage](https://docs.chaossearch.io/docs/pushing-logs-to-google-cloud-storage.md): Review this summary of some common third-party tools that are used by ChaosSearch users to push logs to GCP Cloud Storage.
+- [Service Limits](https://docs.chaossearch.io/docs/service-limits.md): Review these configurable settings that can help to manage configuration sizes and resource usage
+
+## Documentation: Storage - Object Groups
+- [Storage - Object Groups Overview](https://docs.chaossearch.io/docs/chaossearch-ui-user-guide.md): **Storage** is the entry point for creating the object groups to filter and index your cloud storage files.
+- [Managing Your Buckets](https://docs.chaossearch.io/docs/managing-your-buckets.md): Use **Storage** to view and manage your storage buckets, object groups, and indexing.
+- [Managing Your Object Groups](https://docs.chaossearch.io/docs/managing-your-object-groups.md): Use the **Storage** page to review and manage the object groups created for indexing your cloud-storage files.
+  - [Object Group Properties Area](https://docs.chaossearch.io/docs/group-details-area.md): When you display an object group, you can view properties about how the object group is defined.
+- [Creating Object Groups](https://docs.chaossearch.io/docs/creating-object-groups.md): Object groups organize and associate similar objects in your cloud storage for ChaosSearch indexing.
+  - [Advanced Filtering](https://docs.chaossearch.io/docs/advanced-filtering.md): Optional filters for refining the cloud storage objects to index
+  - [Schema Overrides - Field Data Types](https://docs.chaossearch.io/docs/field-type-overrides.md): Schema data type overrides refine how source fields are indexed and made available for analytics.
+    - [Schema Policies](https://docs.chaossearch.io/docs/column-selection.md): Learn how to use ChaosSearch schema policies to include, exclude, and customize the fields in an object group's indexed data.
+  - [Target Workers](https://docs.chaossearch.io/docs/target-active-index.md): Review this topic for information about controlling the amount of compute resources to allocate for indexing.
+  - [Regex Support](https://docs.chaossearch.io/docs/regex-support.md): Some sample regular expressions to parse and preview the contents of common types of source LOG files.
+- [Indexing Your Data](https://docs.chaossearch.io/docs/modeling-your-data.md): Index your cloud storage objects to create the ChaosSearch data for visualizing and analyzing the information in the content.
+  - [Intervals](https://docs.chaossearch.io/docs/intervals.md): A closer look at the intervals created by Chaos Index and how they are used
+  - [Index Lifecycle Management](https://docs.chaossearch.io/docs/index-lifecycle-management.md): Specify the time range of indexed data to retain for each object group's business analytics needs.
+- [Live Index Object Groups](https://docs.chaossearch.io/docs/live-index-object-groups.md): Use Live Indexing to configure automatic indexing when new files are written to cloud storage.
+  - [Live Indexing - Amazon SQS](https://docs.chaossearch.io/docs/live-indexing-with-aws-sqs.md): How to enable AWS SQS messaging for Live Indexing of objects written to AWS S3 cloud storage buckets.
+  - [Live Indexing - Google Pub/Sub](https://docs.chaossearch.io/docs/live-indexing-google-pubsub.md): How to enable Google Pub/Sub messaging for Live Indexing of objects in Google Cloud Storage buckets.
+- [Object Group Isolation Keys](https://docs.chaossearch.io/docs/isolation.md): Isolation keys separate the indexed data for an object group for analysis filtering and compute efficiency.
+  - [Isolation Key Overview](https://docs.chaossearch.io/docs/isolation-overview.md): An overview of isolation key-based object groups and their benefits
+  - [Important Isolation Considerations](https://docs.chaossearch.io/docs/important-isolation-considerations.md): Isolation keys can be helpful for indexing efficiently, but be sure to review these considerations.
+  - [Configuring Object Group Isolation Keys](https://docs.chaossearch.io/docs/configuring-isolationkeys-in-chaossearch.md): How to create object groups that can separate data into isolation key slices
+- [Deleting Object Groups](https://docs.chaossearch.io/docs/deleting-object-groups.md): Delete object groups to remove unnecessary or test groups and their indexed data.
+
+## Documentation: Views - Patterns:Tables
+- [Refinery Overview](https://docs.chaossearch.io/docs/refinery.md): Use the ChaosSearch Refinery to create views that prepare and virtually transform your index data for analytics.
+- [Views](https://docs.chaossearch.io/docs/refinery-index-views.md): Create Refinery views to prepare and materialize the indexed data of object groups into columns for analytics and monitoring.
+- [Displaying View Information](https://docs.chaossearch.io/docs/views-copy.md): Display the
+- [Schema Transformations](https://docs.chaossearch.io/docs/schema-transformations.md): Use ChaosSearch cchema transformations to virtually transform and materialize columns for analytics and querying.
+- [Creating a View for Isolated Data](https://docs.chaossearch.io/docs/creating-a-partitioned-index-view.md): Define views with isolation keys to filter analysis and results to only the segments of data that users need to see.
+- [Import Pre-Built Visualizations](https://docs.chaossearch.io/docs/import-pre-built-visualizations.md): Import some pre-built visualizations for common services to get started with visualizations and dashboards.
+
+## Documentation: JSON Flex
+- [The JSON Flex Advantage](https://docs.chaossearch.io/docs/the-json-flex-advantage.md): ChaosSearch's robust solution for JSON data indexing and querying to drive business analytics
+  - [JSON Flex Options Reference](https://docs.chaossearch.io/docs/json-flex-advantage.md): A list of the JSON Flex options in object groups and views
+  - [JSON Flex Behavior Summary](https://docs.chaossearch.io/docs/summary-of-json-flex-options.md): Review a matrix of the JSON Flex options with some advantages and behaviors to note.
+  - [JSON Log and Event File Challenges](https://docs.chaossearch.io/docs/json-flex-processing.md): JSON log and event files are very valuable sources for information, but there are challenges for indexing them efficiently.
+- [CloudTrail JSON Files: Indexing Recommendations](https://docs.chaossearch.io/docs/cloudtrail-json-files-indexing-recommendations.md): Summary of recommendations for the JSON Flex and Chaos Index settings with CloudTrail logs
+- [CloudTrail JSON Files: View Recommendations](https://docs.chaossearch.io/docs/cloudtrail-json-files-view-recommendations.md): Some recommended practices for configuring views to search and visualize CloudTrail indexed data
+- [Walkthrough: Creating Object Groups with JSON Flex](https://docs.chaossearch.io/docs/creating-an-object-group-for-json-files.md): Review the steps for creating object groups that use JSON Flex options to unlock the value in your JSON log and event files
+- [Walkthrough: Creating Views with JSON Flex Features](https://docs.chaossearch.io/docs/creating-index-views-for-json-object-groups.md): Review the steps to create views for JSON object groups and the JSON Flex options that drive filtering and transformation.
+
+## Documentation: Search Analytics
+- [Search Analytics](https://docs.chaossearch.io/docs/cs-search.md): **Search Analytics** opens an embedded OpenSearch Dashboards interface to search and create visualizations of the indexed data.
+- [Searching the Indexed Data](https://docs.chaossearch.io/docs/viewing-and-analyzing-your-data.md): Use **Discover** to search within a view for information and insights.
+  - [Free Text Searches](https://docs.chaossearch.io/docs/free-text-searches.md): A free text search looks for matching values in all the indexed data for a specific Refinery view, across all columns, for the specified time frame.
+  - [Field-Level Searches](https://docs.chaossearch.io/docs/field-level-searches.md): Use a field-level search to query for values within a specific field (column).
+  - [Filter Searches](https://docs.chaossearch.io/docs/filter-searches.md): Use filter searches to narrow Discover results with filters on specific fields.
+  - [Histogram Display and Time Settings](https://docs.chaossearch.io/docs/histogram-display-and-time-settings.md): Learn about the Discover histogram display and how to manage time ranges for searches.
+  - [Search Analytics Options Overview](https://docs.chaossearch.io/docs/search-analytics-options-overview.md): Review wildcard and syntax options that can help to improve Search Analytics Discover operations
+  - [Saving a Search Analytics Query](https://docs.chaossearch.io/docs/saving-a-search-analytics-query.md): Save the queries that you run more than once to quickly use them in the future.
+  - [Sharing Search Analytics Discover Results](https://docs.chaossearch.io/docs/sharing-search-analytics-discover-results.md): Export Discover search results to share that data with others or to review later.
+  - [Bulk Query Export in Search Analytics](https://docs.chaossearch.io/docs/bulk-query-export-in-search-analytics.md): Run an Elasticsearch/Discover in the background and export an unlimited, complete result set to S3 for later review.
+  - [Query and Search Management](https://docs.chaossearch.io/docs/query-and-search-management.md): Insight and control over your queries and searches
+  - [Searching JSON Views](https://docs.chaossearch.io/docs/sample-json-index-views.md): Examples of OpenSearch Dashboards searches and visualizations using horizontally and vertically expanded JSON log files
+- [Creating Visualizations](https://docs.chaossearch.io/docs/creating-visualizations.md): Use Search Analytics > Visualize to create and run a variety of charts and graphs for your ChaosSearch indexes.
+  - [Choosing a Visualization Type](https://docs.chaossearch.io/docs/choosing-a-visualization-type.md): The **New Visualization** window offers a variety of chart types to choose from.
+  - [Switch Views in a Search Analytics Visualization](https://docs.chaossearch.io/docs/switch-views-in-a-search-analytics-visualization.md): Change the view for a visualization to see the new dataset in the panel.
+  - [OpenSearch Dashboards Metric and Bucket Aggregations](https://docs.chaossearch.io/docs/cs-search-ui-support.md): A list of the supported metric and bucket aggregations for use in visualizations
+  - [Saving and Deleting Visualizations](https://docs.chaossearch.io/docs/saving-and-deleting-visualizations.md): Save and delete visualizations in the Search Analytics page
+- [Building a Dashboard](https://docs.chaossearch.io/docs/building-a-dashboard.md): Build and display powerful at-a-glance summaries for routine review or mission-critical task boards.
+- [Dashboard and Visualization Migration](https://docs.chaossearch.io/docs/cs-search-dashboard-visualization-migration.md): Review how to migrate dashboards and visualizations from other Kibana or OpenSearch Dashboards deployments to Search Analytics.
+- [Searching for Saved Objects](https://docs.chaossearch.io/docs/searching-for-saved-objects.md): Use Saved Objects to review the list of Search Analytics objects and import/export objects
+- [OpenSearch Dashboards Advanced Settings](https://docs.chaossearch.io/docs/cs-search-advanced-settings.md): Use OpenSearch Dashboards configuration settings to control some behaviors and actions in the **Search Analytics** pages.
+- [Bulk Query Export](https://docs.chaossearch.io/docs/bulk-query-export.md): Run an Elasticsearch/Discover search in the background and export an unlimited, complete result set to S3 for later review.
+- [Using Pre-Built Visualizations with Views](https://docs.chaossearch.io/docs/using-pre-built-visualizations-with-views.md): Review the following topics for an overview of the pre-built OpenSearch Dashboards visualizations
+  - [AWS Visualizations](https://docs.chaossearch.io/docs/aws-visualizations.md): Review some sample Search Analytics dashboards and visualizations for popular Amazon services.
+  - [Cloudflare Visualizations](https://docs.chaossearch.io/docs/cloudflare-visualizations.md)
+  - [Fastly Visualizations](https://docs.chaossearch.io/docs/fastly-visualizations.md): Request and response code visualizations can help to show web activity and behaviors.
+  - [Slack Access Logs](https://docs.chaossearch.io/docs/slack-access-logs.md): Access Logs visualizations are an easy way to check for any unusual or suspicious sign-in activity.
+  - [NGINX Visualizations](https://docs.chaossearch.io/docs/nginx-visualizations.md): User agent and status code visualizations can help to show processing activity and web server insights.
+
+## Documentation: SQL Analytics
+- [About the ChaosSearch SQL Support](https://docs.chaossearch.io/docs/sql-analytics.md): Read about the ChaosSearch portal to SQL querying and visualizations using the Refinery views
+  - [Recommendations for Business Analytics and Complex SQL](https://docs.chaossearch.io/docs/recommendations-for-business-analytics-and-complex-sql.md): Suggested steps for best SQL query performance
+- [Get Started with SQL Analytics](https://docs.chaossearch.io/docs/using-superset.md): How to use the embedded Superset to run SQL queries and create visualizations using your Refinery views
+- [Run a SQL Query](https://docs.chaossearch.io/docs/run-a-sql-query.md): Use SQL Editor to run and build queries against the ChaosSearch indexed data.
+  - [Query JSON String Fields in SQL](https://docs.chaossearch.io/docs/query-json-string-fields-in-sql.md): Use `json_value` in SQL queries to return the value of a JSON property within a JSON string column.
+- [SQL Syntax Support](https://docs.chaossearch.io/docs/sql-syntax-support.md): A summary of the SQL syntax available within ChaosSearch **SQL Analytics**
+  - [SELECT Statement](https://docs.chaossearch.io/docs/select-statement.md): Retrieve rows from one or more ChaosSearch views.
+  - [WHERE Clause](https://docs.chaossearch.io/docs/where-clause.md): Specify criteria that must be met in the results of the SELECT operation.
+  - [GROUP BY Clause](https://docs.chaossearch.io/docs/group-by-clause.md): Group SELECT result rows based on matching value rules.
+  - [HAVING Clause](https://docs.chaossearch.io/docs/having-clause.md): Specify a condition to filter groups for inclusion in the SELECT results.
+  - [ORDER BY Clause](https://docs.chaossearch.io/docs/order-by-clause.md): Sort SELECT results.
+  - [LIMIT Clause](https://docs.chaossearch.io/docs/limit-clause.md): Cap the number of results returned by a SELECT.
+  - [JOIN Syntax](https://docs.chaossearch.io/docs/join-syntax.md): Combine data from one or more relations.
+  - [Subqueries](https://docs.chaossearch.io/docs/subqueries.md): An overview of ChaosSearch subquery support in SQL Analytics.
+  - [SQL Functions](https://docs.chaossearch.io/docs/sql-function-support.md): A summary of built-in functions currently supported for **SQL Analytics**
+  - [Information Schema Support](https://docs.chaossearch.io/docs/information-schema-support.md): Display the ChaosSearch metadata for schemas, views, and columns.
+  - [SHOW COLUMNS](https://docs.chaossearch.io/docs/show-columns.md): Display the columns in a ChaosSearch view.
+  - [SHOW SCHEMAS](https://docs.chaossearch.io/docs/show-schemas.md): List the schemas in the ChaosSearch catalog.
+  - [SHOW TABLES](https://docs.chaossearch.io/docs/show-tables.md): Display the available ChaosSearch views to query in SQL.
+- [Unsupported SQL Syntax](https://docs.chaossearch.io/docs/unsupported-sql-syntax.md): Review this topic for syntax that is not currently supported for use with SQL Analytics.
+- [Add a Virtual Dataset](https://docs.chaossearch.io/docs/add-a-virtual-dataset.md): A *virtual* dataset is created from the results of a SQL query to organize the data that you want to visualize.
+- [Create Dataset Metrics](https://docs.chaossearch.io/docs/create-dataset-metrics.md): Add custom calculations for your Superset visualizations
+- [Manage Dataset Columns](https://docs.chaossearch.io/docs/manage-dataset-columns.md): Options for the columns in your Superset datasets
+- [Add a Calculated Column](https://docs.chaossearch.io/docs/add-a-calculated-column.md)
+- [Create a Dashboard](https://docs.chaossearch.io/docs/create-a-dashboard.md): Use dashboards to create a summary of key graphics for users.
+  - [Editing a Dashboard](https://docs.chaossearch.io/docs/editing-a-dashboard.md): How to edit SQL Analytics dashboards
+  - [Edit Dashboard or Chart Properties](https://docs.chaossearch.io/docs/edit-dashboard-or-chart-properties.md): Change titles, access, and related info for SQL Analytics visuals
+- [Exporting and Importing within Superset](https://docs.chaossearch.io/docs/exporting-and-importing-within-superset.md): You can export and import one or more saved dashboards or datasets using the Superset UI.
+- [FAQs for SQL Analytics and Superset](https://docs.chaossearch.io/docs/sql-analytics-and-superset-faqs.md): Some questions and answers for SQL Analytics and Superset behaviors
+
+## Documentation: Chaos AI Assistant
+- [Converse With Data Using Chaos AI Assistant](https://docs.chaossearch.io/docs/chaos-ai-assistant.md): Use the power of AI to explore ChaosSearch indexed data for analytics insights
+- [Chaos AI Assistant Benefits](https://docs.chaossearch.io/docs/chaos-ai-assistant-benefits.md): With Chaos AI Assistant, leverage the power and flexibility of AI to ask questions and quickly get answers.
+- [About Conversations](https://docs.chaossearch.io/docs/about-conversations.md): Review these topics for more information about creating and managing conversations
+  - [Chaos AI Assistant Query Rules and Best Practices](https://docs.chaossearch.io/docs/chaos-ai-assistant-query-rules-and-best-practices.md): How to form the questions to run search and SQL queries with Chaos AI Assistant
+  - [Default Behaviors of the Chaos AI Assistant](https://docs.chaossearch.io/docs/default-behaviors-of-chaos-assistant.md): Review these default settings and behaviors for conversations to help tune the questions that you ask
+  - [Sample Chaos AI Assistant Conversation](https://docs.chaossearch.io/docs/sample-chaos-ai-assistant-conversation.md): A closer look at the Chaos AI Assistant and how to use it.
+  - [Chaos AI Assistant Conversation Best Practices](https://docs.chaossearch.io/docs/chaos-ai-assistant-conversation-best-practices.md): Good practices for conversing with Chaos AI Assistant and asking questions
+- [Conversation Troubleshooting and Error Messages](https://docs.chaossearch.io/docs/troubleshooting-and-error-messages.md): A summary of some common error messages and troubleshooting scenarios for Chaos AI Assistant
+
+## Documentation: Alerting & Notifications
+- [Alerting Overview](https://docs.chaossearch.io/docs/alerting-overview.md): Use alerts to automatically detect conditions in your log and event data and notify users.
+- [Alert Destinations](https://docs.chaossearch.io/docs/alert-destinations.md): Create one or more destinations to manage where alert notifications are sent.
+- [Alert Monitors](https://docs.chaossearch.io/docs/alert-creation.md): Use monitors to specify conditions to watch for in your log and event data.
+  - [Define Triggers for a Monitor](https://docs.chaossearch.io/docs/define-triggers-for-monitor.md): Add one or more triggers to a monitor to detect when a condition occurs
+  - [Monitor Variables](https://docs.chaossearch.io/docs/monitor-variables.md): Use the monitor variables to add context and details to action messages for troubleshooting
+  - [Tuning the Monitor Schedule and Analysis Window](https://docs.chaossearch.io/docs/tuning-monitor-schedule.md): Helpful notes for choosing the monitor schedule interval and monitoring time range
+- [Alert Status Overview](https://docs.chaossearch.io/docs/alert-status-overview.md): A description of the alert status such as Active, Acknowledged, Completed
+
+## Documentation: Integrations
+- [Integrations Overview](https://docs.chaossearch.io/docs/chaossearch-integrations.md): ChaosSearch supports alert forwarding and access to its rich indexed data as a strong analytics partner in your observability suite.
+- [Grafana Integration](https://docs.chaossearch.io/docs/grafana-integration.md): Configure Elasticsearch data source connections to ChaosSearch views to enhance Grafana metric analysis and troubleshooting.
+  - [Add Grafana Data Sources for Views](https://docs.chaossearch.io/docs/add-grafana-data-sources-for-views.md): Configure Elasticsearch data source connections to drill-down to ChaosSearch searches and visualizations.
+  - [Sample Grafana Dashboards with ChaosSearch Log Data](https://docs.chaossearch.io/docs/sample-grafana-dashboards-with-chaossearch-log-data.md): Create panels of ChaosSearch Index data to enrich Grafana dashboards
+  - [Create Grafana Data Links to Drill-Down to ChaosSearch](https://docs.chaossearch.io/docs/create-grafana-data-links-to-drill-down-to-chaossearch.md): Configure hotspots within Grafana panels and dashboards to drill-down to ChaosSearch features.
+- [Datadog Integration](https://docs.chaossearch.io/docs/datadog-integration.md): Combine your Datadog monitoring with ChaosSearch to support long-term history and centralized log analysis.
+  - [Getting Started with the Datadog Integration](https://docs.chaossearch.io/docs/getting-started-with-the-datadog-integration.md): An overview of setting up the integration
+  - [Archiving Datadog Log Files](https://docs.chaossearch.io/docs/archiving-datadog-log-files.md): Ensure that log files monitored with Datadog are archived to cloud-storage.
+  - [Add Context Links in Datadog](https://docs.chaossearch.io/docs/add-context-links-in-datadog.md): How to link to ChaosSearch from Datadog widgets
+- [Opsgenie Integration](https://docs.chaossearch.io/docs/opsgenie-integration.md): Configure alerts to go to Opsgenie for incident management services.
+
+## Documentation: User Management & Role-Based Access Controls (RBAC)
+- [ChaosSearch User Authentication and Authorization](https://docs.chaossearch.io/docs/chaossearch-rbac.md): Read about the user and group role-based access controls (RBAC)
+- [RBAC Configuration](https://docs.chaossearch.io/docs/role-based-access-control-configuration.md): Use groups to configure role-based access controls within the ChaosSearch platform.
+- [Sample Resource Names for Groups](https://docs.chaossearch.io/docs/sample-resource-names-for-groups.md): Some common resource name examples for ChaosSearch objects when specified in RBAC groups
+- [Supported RBAC Actions Reference](https://docs.chaossearch.io/docs/supported-rbac-actions-reference.md): A reference list of the Actions for RBAC configuration
+- [Managing Users](https://docs.chaossearch.io/docs/managing-users.md): Review these topics to learn about adding subaccounts/users and managing access to the ChaosSearch console.
+- [Model User Roles within ChaosSearch](https://docs.chaossearch.io/docs/model-user-roles-within-chaossearch.md)
+- [Configure a Model RBAC Group](https://docs.chaossearch.io/docs/configure-a-model-rbac-group.md): Use the sample templates to create the JSON group definition and import it.
+
+## Documentation: ChaosSearch APIs
+- [ChaosSearch API Overview](https://docs.chaossearch.io/docs/chaossearch-api.md): The ChaosSearch API is the administrative scripted interface to the ChaosSearch service.
+  - [Authentication for ChaosSearch APIs](https://docs.chaossearch.io/docs/authentication.md): Review this topic for information about authentication options for the ChaosSearch API.
+  - [Response Codes](https://docs.chaossearch.io/docs/response.md): List of response codes
+- [Bulk Query Export API](https://docs.chaossearch.io/docs/bulk-query-export-api.md): An overview of the API for bulk query export
+  - [/bulkexport/submit](https://docs.chaossearch.io/docs/bulkexportsubmit.md): Use the /bulkexport/submit endpoint to run a bulk export query.
+  - [/bulkexport/status API](https://docs.chaossearch.io/docs/bulkexportstatus-api.md): You can poll for status of bulk export jobs.
+  - [/bulkexport/](https://docs.chaossearch.io/docs/bulkexport.md): List the bulk query export jobs and their information.
+  - [/bulkexport/cancel](https://docs.chaossearch.io/docs/bulkexportcancel.md): Stop a running bulk export query.
+- [Elasticsearch API Support](https://docs.chaossearch.io/docs/chaossearch-elasticsearch-api-support.md): ChaosSearch includes support for the Elasticsearch API.
+  - [Cancel a Running Search](https://docs.chaossearch.io/docs/cancel-a-running-search.md): With ChaosSearch, you can cancel your in-progress ElasticSearch API search.
+  - [Incremental Results Loading](https://docs.chaossearch.io/docs/incremental-results-loading.md): An overview of the incremental results feature and how to use it via API
+  - [OpenSearch Python Client](https://docs.chaossearch.io/docs/opensearch-python-client.md): The OpenSearch python client can be used for programmatic querying of the ChaosSearch indexed data.
+- [Presto/Trino SQL API](https://docs.chaossearch.io/docs/prestotrino-sql-api.md): ChaosSearch includes support for running SQL commands using the Presto/Trino SQL dialect.
+- [ChaosSearch Terraform Provider for Resources](https://docs.chaossearch.io/docs/chaossearch-terraform-provider-for-resources.md): ChaosSearch offers a Terraform provider for managing resources such as object groups, views, users, and alerts.
+  - [Getting Started with the ChaosSearch Terraform Provider](https://docs.chaossearch.io/docs/getting-started-with-the-chaossearch-terraform-provider.md): Follow these general steps to get started with the setup and use of the Terraform environment.
+  - [chaossearch_destination Resource](https://docs.chaossearch.io/docs/chaossearch_destination-resource.md): The chaossearch_destination resource creates an alerting destination resource.
+  - [chaossearch_index_model Resource](https://docs.chaossearch.io/docs/chaossearch_index-resource.md): Manage indexing of object groups in Terraform
+  - [chaossearch_monitor Resource](https://docs.chaossearch.io/docs/chaossearch_monitor-resource.md): Define a Search Analytics monitor using Terraform
+  - [chaossearch_object_group Resource](https://docs.chaossearch.io/docs/chaossearch_objectgroup-resource.md): Add or update an object group using Terraform
+  - [chaossearch_sub_account Resource](https://docs.chaossearch.io/docs/chaossearch_subaccount-resource.md): Use Terraform to add a subaccount user to a ChaosSearch cluster
+  - [chaossearch_user_group resource](https://docs.chaossearch.io/docs/chaossearch_usergroup-resource.md): Create a user group of permissions using Terraform for a ChaosSearch cluster.
+
+## Documentation: System Dashboard
+- [System Dashboard](https://docs.chaossearch.io/docs/dashboard.md): Use the System Dashboard to review high-level usage metrics and volume trends.
+
+## Documentation: Support
+- [ChaosSearch FAQs](https://docs.chaossearch.io/docs/faq.md): Common questions and answers for the ChaosSearch services and features.
+
+## API Documentation: ChaosSearch API
+- [Create a new object group](https://docs.chaossearch.io/reference/post_bucket-createobjectgroup.md): Create a new object group that is unique to the ChaosSearch service. The `Bucket` endpoints currently use AWS Signature Version 4 authentication.   To list or delete existing object groups, use the…
+- [Update an existing object group](https://docs.chaossearch.io/reference/post_bucket-updateobjectgroup.md): Update an existing object group's settings for index retention, index parallelism, or target active index. The update API is limited to a subset of fields that can be changed. In some cases, you must…
+- [Create a new view](https://docs.chaossearch.io/reference/post_bucket-createview.md): Adds a new view as a virtual pane into one or more object groups. Views allow users to define how to explore and query the data with the ChaosSearch Search Analytics interface or through interfaces…
+- [Update an existing view](https://docs.chaossearch.io/reference/post_bucket-updateview.md): Updates an existing view with the specified changes for index retention. The `/Bucket/updateView` endpoint is limited to a subset of fields that can be changed. In some cases, it is necessary to…
+- [Fetch isolation keys for a view, object group, or index](https://docs.chaossearch.io/reference/post_bucket-partitionkeys.md): Retrieves the isolation keys for a view, object group, or index. The `Bucket` endpoints currently require an AWS V4 signature.
+- [Fetch a dataset for a given ID](https://docs.chaossearch.io/reference/get_bucket-dataset-id-id.md): Retrieves a dataset for a given ID. The `Bucket` endpoints currently require an AWS V4 signature.
+- [Fetch a dataset for a given name.](https://docs.chaossearch.io/reference/get_bucket-dataset-name-name.md): Retrieves a dataset for a given name. The `Bucket` endpoints currently require an AWS V4 signature.
+- [Display the indexing events for an object group.](https://docs.chaossearch.io/reference/get_bucket-events-id-id.md): Retrieves the indexing events for the group UID value. The `Bucket` endpoints currently require an AWS V4 signature.
+- [Manage the indexing state for an object group](https://docs.chaossearch.io/reference/post_bucket-model.md): Sends a signal to the system to start, stop, terminate, or restart the indexing service for an object group.  The `Bucket` endpoints currently require an AWS V4 signature.
+- [Fetch bucket metadata and index statistics](https://docs.chaossearch.io/reference/post_bucket-metadata.md): Retrieves bucket metadata that includes information about index statistics. The `Bucket` endpoints currently require an AWS V4 signature.
+- [List existing buckets, object groups, and views](https://docs.chaossearch.io/reference/get_v1.md): Returns a list of existing buckets, object groups, and views.
+- [Delete an object group or view](https://docs.chaossearch.io/reference/delete_v1-key.md): Deletes an existing object group or view. An object group must be empty, with no associated indexes or views, before it can be deleted.
+- [Get view or object group](https://docs.chaossearch.io/reference/get_v1-key.md): Displays information for a view or object group.
+- [Create a JWT authentication token for the specified user](https://docs.chaossearch.io/reference/post_user-login.md): Create a JWT for secure authentication of a primary or subaccount user.    The command outputs a token valid for 24 hours for the associated user.        The `/user/*` calls also require the header…
+- [Display a manifest of the ChaosSearch user deployment-related resources](https://docs.chaossearch.io/reference/post_user-manifest.md): Displays a manifest of all user-related resources (that is, subaccounts, groups, system settings, and related information).  This endpoint requires a JWT created for the primary/tenant account using…
+- [Create or update a subaccount](https://docs.chaossearch.io/reference/post_user-createsubaccount.md): Creates or updates a subaccount for the ChaosSearch deployment. New subaccounts are automatically added to the `default` group. The `default` group permissions often allow wide access to actions and…
+- [Provision a ChaosSearch API Key credential](https://docs.chaossearch.io/reference/post_user-credential-apikey-create.md): Create a ChaosSearch API key credential for the given account (root or subaccount) context  This endpoint requires a JWT created for the primary/tenant account using the `/user/login` endpoint.
+- [Remove a ChaosSearch API key credential](https://docs.chaossearch.io/reference/delete_user-credential-apikey-delete.md): Deletes a ChaosSearch API key credential for the given account (root or subaccount) context.  This endpoint requires a JWT created for the primary/tenant account using the `/user/login` endpoint.
+- [List all ChaosSearch API key credentials](https://docs.chaossearch.io/reference/get_user-credential-apikey-list.md): List all ChaosSearch API key credentials for the given account (root or subaccount) context  This endpoint requires a JWT created for the primary/tenant account using the `/user/login` endpoint.
+- [Delete a subaccount](https://docs.chaossearch.io/reference/post_user-deletesubaccount.md): Deletes a subaccount for the ChaosSearch deployment.  This endpoint requires a JWT created for the primary/tenant account using the `/user/login` endpoint.
+- [Fetch all groups for a ChaosSearch deployment](https://docs.chaossearch.io/reference/get_user-groups.md): Returns all of the group data for this deployment.  This endpoint requires a JWT created for the primary/tenant account using the `/user/login` endpoint.
+- [Create new groups for a ChaosSearch deployment](https://docs.chaossearch.io/reference/post_user-groups.md): Creates one or more new groups for this deployment. The caller must provide a JSON body with all required group information to create new groups. A group must not already exist in the ChaosSearch…
+- [Update existing groups for a given ChaosSearch deployment](https://docs.chaossearch.io/reference/put_user-groups.md): Updates one or more existing groups for this deployment. The caller must provide a JSON body with the group and RBAC information. You must specify a group ID or a group name; to change the group…
+- [Delete groups related to this ChaosSearch deployment](https://docs.chaossearch.io/reference/delete_user-groups.md): Deletes groups in this deployment given an array of group IDs. The JSON body must contain one or more group IDs to delete groups. The groups must already exist in the deployment. This call is atomic;…
+- [Fetch the group data for the group ID](https://docs.chaossearch.io/reference/get_user-group-id.md): Returns a JSON document with the group data for the group ID.  **Note:** If you require bulk group operations see the `/groups` endpoint.  This endpoint requires a JWT created for the primary/tenant…
+- [Delete the group data for the specific group ID](https://docs.chaossearch.io/reference/delete_user-group-id.md): Deletes the group data for the group ID.  **Note:** If you require bulk group operations, see the `/user/groups` endpoint.  This endpoint requires a JWT created for the primary/tenant account using…

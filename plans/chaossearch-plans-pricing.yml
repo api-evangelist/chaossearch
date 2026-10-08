@@ -1,0 +1,21 @@
+generated: '2026-10-08'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://www.chaossearch.io/pricing
+sources:
+- https://www.chaossearch.io/pricing
+name: ChaosSearch pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Ingest Based
+  price_text: 15¢ - 30¢ Per ingested GB + $3,000/tenant-region/month
+  description: For teams that want predictability
+- name: Worker Based
+  price_text: 20¢ Per workerhour (compute-hour) + $1,000/tenant-region/month
+  description: For teams that want flexibility
+- name: Unlimited
+  price_text: $0.30/GB
+  price: 0.3
+  description: ChaosSearch Unlimited plan
+docs: https://www.chaossearch.io/pricing

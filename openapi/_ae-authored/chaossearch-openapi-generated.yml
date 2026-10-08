@@ -1,0 +1,179 @@
+openapi: 3.1.0
+info:
+  title: ChaosSearch API
+  version: '2026-10-08'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-08: 5 operation(s) read from 2 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; ChaosSearch has published no machine-readable contract that the
+    pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 2
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-08'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.chaossearch.io/docs/authentication.md
+  - https://docs.chaossearch.io/docs/bulkexportstatus-api.md
+servers:
+- url: https://<chaossearch
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request GET  --url https://<chaossearch domain>/user/groups  --header ''accept: application/json''  --header ''x-amz-chaossumo-route-token:
+          login''  --header ''x-amz-security-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJTZWNyZXRBY2Nlc3NL...80LthO5-jS4Ke9AWk'''
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request POST  --url https://<chaossearch domain>/user/login  --header ''accept: application/json''  --header ''content-type:
+          application/json''  --header ''x-amz-chaossumo-route-token: login''  --data ''{  "Username": "<account>",  "Password": "<password>",   "ParentUid":
+          "<external ID>",  "UniqueSession": true}'''
+  /bulkexport/status:
+    post:
+      operationId: post_bulkexport_status
+      tags:
+      - Bulkexport
+      summary: POST /bulkexport/status
+      x-source: https://docs.chaossearch.io/docs/bulkexportstatus-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostBulkexportStatusRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl ''https://mycompany.chaossearch.com/bulkexport/status''  --aws-sigv4 "aws:amz:<region>:s3" --user "<API_Key>:<Secret>"  -H
+          ''Content-Type: application/json''  --data-raw ''{"id":"5b00d97d-133d-48e7-9e61-a8a98e4d0a38"}''
+
+          ```'
+  /user/groups:
+    get:
+      operationId: get_user_groups
+      tags:
+      - User
+      summary: Authentication for ChaosSearch APIs
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserGroupsResponse'
+      x-evidence:
+        kind: documentation
+  /user/login:
+    post:
+      operationId: post_user_login
+      tags:
+      - User
+      summary: Authentication for ChaosSearch APIs
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUserLoginRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUserLoginResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostRequest:
+      type: object
+      properties:
+        Username:
+          type: string
+        Password:
+          type: string
+        ParentUid:
+          type: string
+        UniqueSession:
+          type: boolean
+    PostBulkexportStatusRequest:
+      type: object
+      properties:
+        id:
+          type: string
+    GetUserGroupsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        permissions:
+          type: array
+          description: Array of permission objects
+    PostUserLoginRequest:
+      type: object
+      properties:
+        Username:
+          type: string
+        Password:
+          type: string
+        ParentUid:
+          type: string
+        UniqueSession:
+          type: boolean
+      required:
+      - Username
+      - Password
+    PostUserLoginResponse:
+      type: object
+      properties:
+        Token:
+          type: string
+  securitySchemes:
+    JWT_token:
+      type: http
+      scheme: bearer
+      x-source: https://docs.chaossearch.io/docs/chaossearch-rbac.md
+tags:
+- name: Api
+- name: Bulkexport
+- name: User
+security:
+- JWT_token: []

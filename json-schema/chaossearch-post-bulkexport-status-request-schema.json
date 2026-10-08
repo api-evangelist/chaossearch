@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/chaossearch/main/json-schema/chaossearch-post-bulkexport-status-request-schema.json",
+  "title": "PostBulkexportStatusRequest",
+  "x-generated": "2026-10-08",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/chaossearch-openapi-generated.yml#/components/schemas/PostBulkexportStatusRequest",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}
