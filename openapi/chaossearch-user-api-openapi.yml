@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  title: ChaosSearch User API
+  version: '2026-10-08'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-08: 5 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; ChaosSearch has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 2
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-08'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.chaossearch.io/docs/authentication.md
+  - https://docs.chaossearch.io/docs/bulkexportstatus-api.md
+servers:
+- url: https://<chaossearch
+security:
+- JWT_token: []
+tags:
+- name: User
+paths:
+  /user/groups:
+    get:
+      operationId: get_user_groups
+      tags:
+      - User
+      summary: Authentication for ChaosSearch APIs
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUserGroupsResponse'
+      x-evidence:
+        kind: documentation
+  /user/login:
+    post:
+      operationId: post_user_login
+      tags:
+      - User
+      summary: Authentication for ChaosSearch APIs
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUserLoginRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUserLoginResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostUserLoginResponse:
+      type: object
+      properties:
+        Token:
+          type: string
+    PostUserLoginRequest:
+      type: object
+      properties:
+        Username:
+          type: string
+        Password:
+          type: string
+        ParentUid:
+          type: string
+        UniqueSession:
+          type: boolean
+      required:
+      - Username
+      - Password
+    GetUserGroupsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        permissions:
+          type: array
+          description: Array of permission objects
+  securitySchemes:
+    JWT_token:
+      type: http
+      scheme: bearer
+      x-source: https://docs.chaossearch.io/docs/chaossearch-rbac.md

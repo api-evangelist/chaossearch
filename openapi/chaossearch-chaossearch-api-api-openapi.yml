@@ -1,0 +1,77 @@
+openapi: 3.2.0
+info:
+  title: ChaosSearch API
+  version: '2026-10-08'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-08: 5 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; ChaosSearch has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 2
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-08'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.chaossearch.io/docs/authentication.md
+  - https://docs.chaossearch.io/docs/bulkexportstatus-api.md
+servers:
+- url: https://<chaossearch
+security:
+- JWT_token: []
+tags:
+- name: ChaosSearch API
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - ChaosSearch API
+      summary: GET /
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request GET  --url https://<chaossearch domain>/user/groups  --header ''accept: application/json''  --header ''x-amz-chaossumo-route-token: login''  --header ''x-amz-security-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJTZWNyZXRBY2Nlc3NL...80LthO5-jS4Ke9AWk'''
+    post:
+      operationId: post
+      tags:
+      - ChaosSearch API
+      summary: POST /
+      x-source: https://docs.chaossearch.io/docs/authentication.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request POST  --url https://<chaossearch domain>/user/login  --header ''accept: application/json''  --header ''content-type: application/json''  --header ''x-amz-chaossumo-route-token: login''  --data ''{  "Username": "<account>",  "Password": "<password>",   "ParentUid": "<external ID>",  "UniqueSession": true}'''
+components:
+  schemas:
+    PostRequest:
+      type: object
+      properties:
+        Username:
+          type: string
+        Password:
+          type: string
+        ParentUid:
+          type: string
+        UniqueSession:
+          type: boolean
+  securitySchemes:
+    JWT_token:
+      type: http
+      scheme: bearer
+      x-source: https://docs.chaossearch.io/docs/chaossearch-rbac.md

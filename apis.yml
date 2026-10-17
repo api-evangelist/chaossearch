@@ -87,16 +87,16 @@ common:
   url: https://www.chaossearch.io/
 
 apis:
-- aid: chaossearch:chaossearch-api
-  name: ChaosSearch API
-  description: 'ChaosSearch API as documented publicly: 5 operations. Contract generated from the documentation by API Evangelist (2026-10-08);
-    not the provider''s own document.'
+- aid: chaossearch:chaossearch-bulkexport-api
+  name: ChaosSearch Bulkexport API
+  description: The Bulkexport API from ChaosSearch — 1 operation(s) for bulkexport.
   humanURL: https://docs.chaossearch.io/docs/authentication.md
   baseURL: https://<chaossearch
+  tags:
+  - Bulkexport
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/chaossearch-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/chaossearch-bulkexport-api-openapi.yml
   - type: JSONSchema
     url: json-schema/chaossearch-post-user-login-request-schema.json
   - type: JSONSchema
@@ -107,7 +107,46 @@ apis:
     url: json-schema/chaossearch-post-user-login-response-schema.json
   - type: JSONSchema
     url: json-schema/chaossearch-post-bulkexport-status-request-schema.json
-
+- aid: chaossearch:chaossearch-chaossearch-api-api
+  name: ChaosSearch ChaosSearch API
+  description: The ChaosSearch API API from ChaosSearch — 1 operation(s) for chaossearch api.
+  humanURL: https://docs.chaossearch.io/docs/authentication.md
+  baseURL: https://<chaossearch
+  tags:
+  - ChaosSearch API
+  properties:
+  - type: OpenAPI
+    url: openapi/chaossearch-chaossearch-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-user-login-request-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-get-user-groups-response-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-user-login-response-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-bulkexport-status-request-schema.json
+- aid: chaossearch:chaossearch-user-api
+  name: ChaosSearch User API
+  description: The User API from ChaosSearch — 2 operation(s) for user.
+  humanURL: https://docs.chaossearch.io/docs/authentication.md
+  baseURL: https://<chaossearch
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/chaossearch-user-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-user-login-request-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-request-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-get-user-groups-response-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-user-login-response-schema.json
+  - type: JSONSchema
+    url: json-schema/chaossearch-post-bulkexport-status-request-schema.json
 x-coverage:
   state: gated
   reason: partner-login

@@ -1,0 +1,23 @@
+{
+  "provider": "chaossearch",
+  "sources": [
+    "_ae-authored/chaossearch-openapi-generated.yml"
+  ],
+  "outputs": [
+    "chaossearch-bulkexport-api-openapi.yml",
+    "chaossearch-chaossearch-api-api-openapi.yml",
+    "chaossearch-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "chaossearch-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "chaossearch-openapi-generated.yml: tagged paths GET / -> ChaosSearch API",
+    "chaossearch-openapi-generated.yml: tagged paths POST / -> ChaosSearch API",
+    "chaossearch-openapi-generated.yml: declared missing tag: ChaosSearch API",
+    "apis.yml register: written (+3 apis, 3 total)"
+  ],
+  "skipped": []
+}

@@ -1,0 +1,60 @@
+openapi: 3.2.0
+info:
+  title: ChaosSearch Bulkexport API
+  version: '2026-10-08'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-08: 5 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; ChaosSearch has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 2
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-08'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.chaossearch.io/docs/authentication.md
+  - https://docs.chaossearch.io/docs/bulkexportstatus-api.md
+servers:
+- url: https://<chaossearch
+security:
+- JWT_token: []
+tags:
+- name: Bulkexport
+paths:
+  /bulkexport/status:
+    post:
+      operationId: post_bulkexport_status
+      tags:
+      - Bulkexport
+      summary: POST /bulkexport/status
+      x-source: https://docs.chaossearch.io/docs/bulkexportstatus-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostBulkexportStatusRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl ''https://mycompany.chaossearch.com/bulkexport/status''  --aws-sigv4 "aws:amz:<region>:s3" --user "<API_Key>:<Secret>"  -H ''Content-Type: application/json''  --data-raw ''{"id":"5b00d97d-133d-48e7-9e61-a8a98e4d0a38"}''
+
+          ```'
+components:
+  schemas:
+    PostBulkexportStatusRequest:
+      type: object
+      properties:
+        id:
+          type: string
+  securitySchemes:
+    JWT_token:
+      type: http
+      scheme: bearer
+      x-source: https://docs.chaossearch.io/docs/chaossearch-rbac.md
