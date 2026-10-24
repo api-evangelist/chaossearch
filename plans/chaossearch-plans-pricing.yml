@@ -19,3 +19,28 @@ plans:
   price: 0.3
   description: ChaosSearch Unlimited plan
 docs: https://www.chaossearch.io/pricing
+x-canonical:
+  generated: '2026-10-23'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Ingest Based
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Worker Based
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Unlimited
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []

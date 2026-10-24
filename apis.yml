@@ -24,6 +24,9 @@ created: '2026-10-08'
 
 modified: '2026-10-08'
 
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-17
 tags:
 - Analytics
 - Observability
@@ -93,6 +96,8 @@ apis:
   humanURL: https://docs.chaossearch.io/docs/authentication.md
   baseURL: https://<chaossearch
   tags:
+  - Bulk Export
+  tags_raw:
   - Bulkexport
   properties:
   - type: OpenAPI
